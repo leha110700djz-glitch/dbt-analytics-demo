@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Очищенные заказы"
+    columns:
+      - name: order_id
+        description: "PK заказа"
+        tests: [not_null, unique]
+      - name: merchant
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["shop_a", "shop_b", "shop_c"]
+      - name: amount
+        tests: [not_null]
+
+  - name: mart_daily_revenue
+    description: "Выручка по дням и мерчантам"
+    columns:
+      - name: revenue
+        tests: [not_null]

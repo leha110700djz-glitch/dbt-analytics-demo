@@ -1,0 +1,13 @@
+# Скопируй в ~/.dbt/profiles.yml и подставь свои креды
+dbt_analytics_demo:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: postgres
+      password: postgres
+      dbname: analytics
+      schema: public
+      threads: 4
