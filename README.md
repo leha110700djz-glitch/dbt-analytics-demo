@@ -1,5 +1,7 @@
 # dbt-analytics-demo
 
+![CI](https://github.com/leha110700djz-glitch/dbt-analytics-demo/actions/workflows/ci.yml/badge.svg)
+
 Аналитические витрины на **dbt**: staging → marts, с тестами качества и документацией.
 Показывает трансформации как код (версионируемые, тестируемые) — стандарт современного DWH.
 
