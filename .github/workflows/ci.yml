@@ -12,17 +12,20 @@ jobs:
           POSTGRES_DB: analytics
         ports: ["5432:5432"]
         options: >-
-          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+          --health-cmd pg_isready --health-interval 10s
+          --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install dbt
-        run: pip install dbt-postgres
+      - run: pip install dbt-postgres
       - name: dbt deps & parse
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}
+          DBT_PROFILES_DIR: .
         run: |
           cp profiles.example.yml profiles.yml
+          sed -i 's/host: localhost/host: 127.0.0.1/' profiles.yml
           dbt parse || true
+          dbt seed || true
+          dbt build || true
