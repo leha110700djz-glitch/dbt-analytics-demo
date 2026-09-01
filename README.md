@@ -1,6 +1,7 @@
 # dbt-analytics-demo
 
 ![CI](https://github.com/leha110700djz-glitch/dbt-analytics-demo/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Аналитические витрины на **dbt**: staging → marts, с тестами качества и документацией.
 Показывает трансформации как код (версионируемые, тестируемые) — стандарт современного DWH.
@@ -40,3 +41,11 @@ models/staging/stg_orders.sql
 models/marts/mart_daily_revenue.sql
 models/schema.yml        тесты + описания
 ```
+
+---
+
+## Лицензия
+MIT — см. [LICENSE](LICENSE).
+
+## Автор
+Alexey Chervak — Senior Data Engineer. Портфолио: https://github.com/leha110700djz-glitch
